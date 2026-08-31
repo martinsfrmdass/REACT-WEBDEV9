@@ -1,7 +1,7 @@
 
 import { create } from "zustand"
 import {persist} from "zustand/middleware"
-import { axiosInstace, getErrorMessage } from "../api/axios"
+import { axiosInstance, getErrorMessage } from "../api/axios"
 
 export const useUserStore = create(persist(
     
@@ -11,7 +11,7 @@ export const useUserStore = create(persist(
 
     signup: async (formData) => {
         try {
-            const response = await axiosInstace.post("/signup", formData)
+            const response = await axiosInstance.post("/signup", formData)
             set({user: response.data.data, isLoggedIn: true})
 
             return response.data
@@ -22,7 +22,7 @@ export const useUserStore = create(persist(
 
      login: async (formData) => {
         try {
-            const response = await axiosInstace.post("/login", formData)
+            const response = await axiosInstance.post("/login", formData)
             set({user: response.data.data, isLoggedIn: true})
 
             return response.data

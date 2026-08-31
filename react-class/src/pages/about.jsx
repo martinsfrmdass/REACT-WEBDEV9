@@ -1,20 +1,21 @@
 import Counter from "../components/Counter";
+import ControlledFormXray from "../components/controlled-form-xray";
 
+ const About = () => {
+    const year = new Date().getFullYear()
+    return(
+        <>
+        <h1 className="text-red-800 text-4xl text-center">About Page</h1>
 
-const About = () => {
-  const year = new Date().getFullYear()
+      <p className="text-center">
+        Copyright &copy; {year}
+      </p>
 
-  return (
-    <>
-    <h1 className="text-red-800 text-4x1 text-center"> About page</h1>
+      <Counter/>
 
-    <p className="text-center">
-      copyright &copy;{year}
-    </p>
-
-    <Counter/>
-    </>
-  )
-
+      <ControlledFormXray/>
+        </>
+    )
 }
+
 export default About;
